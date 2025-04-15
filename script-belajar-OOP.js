@@ -190,9 +190,29 @@
 
 
 // (PUBLIC CLASS FIELD)
-class Person {
-    
+class BossMonster {
+    name = 'dragonKing';
+    spesies = 'dragon';
+    hp = 10000;
+    mp = 10000;
+};
+class Player extends BossMonster{
+    name = 'player01';
+    spesies = 'human';
+    hp = 200;
+    mp = 150;
+};
+document.getElementById('attack').addEventListener("click",myFunction);
+function myFunction(){
+    console.log(Math.random() * 100);
 }
-const eko = new Person("eko", "khanedy");
-console.log(eko);
-console.log(eko.fullName);
+const defence = document.getElementById(defence);
+const kelakuan = Math.random()*100;
+attack.onclick = function(){
+    console.log(kelakuan);
+}
+const boss = new BossMonster();
+console.log(boss);
+const player = new Player();
+console.log(player);
+
