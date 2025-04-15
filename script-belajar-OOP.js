@@ -202,15 +202,41 @@ class Player extends BossMonster{
     hp = 200;
     mp = 150;
 };
-document.getElementById('attack').addEventListener("click",myFunction);
-function myFunction(){
-    console.log(Math.random() * 100);
+const attack = document.getElementById('attack').addEventListener("click",myAttack);
+const defence = document.getElementById('defend').addEventListener("click",myDefence);
+function myAttack(){
+    Math.random() * 1000;
+};
+function myDefence(){
+    Math.random() * 1000;
+};
+
+function bossMove(){
+    if (Math.random() <= 0.5){
+        return bossAttack
+    } 
+    else if(Math.random() >=0.6){
+        return bossDefend
+    };
 }
-const defence = document.getElementById(defence);
-const kelakuan = Math.random()*100;
-attack.onclick = function(){
-    console.log(kelakuan);
-}
+ let bossAttack = Math.random()*1000;
+ let bossDefend = Math.random()*1000;
+
+
+ function battle(){
+    if(myAttack<bossAttack){
+        player.hp - 100;
+        player.mp - 100;
+        boss.mp - 100;
+    }else if(myAttack>bossAttack){
+        boss.hp - 100;
+    }else if(myAttack<bossDefend){
+        boss.mp - 100
+    }else if(myAttack>bossDefend){
+        boss.hp - 100;
+        boss.mp - 100;
+    }
+ }
 const boss = new BossMonster();
 console.log(boss);
 const player = new Player();
