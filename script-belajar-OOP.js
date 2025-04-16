@@ -196,58 +196,60 @@ class BossMonster {
     hp = 10000;
     mp = 10000;
 };
-class Player extends BossMonster{
+
+class Player extends BossMonster {
     name = 'player01';
     spesies = 'human';
 };
-const attack = document.getElementById('attack').addEventListener("click",myAttack);
-const defence = document.getElementById('defend').addEventListener("click",myDefence);
-function myAttack(){
-    Math.random() * 1000;
-};
-function myDefence(){
-    Math.random() * 1000;
-};
 
-function bossMove(){
-    if (Math.random() <= 0.5){
-        return bossAttack
-    } 
-    else if(Math.random() >=0.6){
-        return bossDefend
-    };
-}
- let bossAttack = Math.random()*1000;
- let bossDefend = Math.random()*1000;
-
-
- function battle(){
-    if(myAttack<bossAttack){
-        player.hp - 100;
-        player.mp - 100;
-        boss.mp - 100;
-    }else if(myAttack>bossAttack){
-        boss.hp - 100;
-        boss.mp -100;
-        player.mp - 100;
-    }else if(myAttack<bossDefend){
-        boss.mp - 100
-        player.mp - 100
-    }else if(myAttack>bossDefend){
-        boss.hp - 100;
-        boss.mp - 100;
-        player.mp - 100;
-    }else if(myDefence<bossAttack){
-        boss.mp - 100;
-        player.mp - 100;
-        player.hp - 100;
-    }else if(myDefence>bossAttack){
-        boss.mp - 100;
-        player.mp - 100;
-    }
- }
 const boss = new BossMonster();
-console.log(boss);
 const player = new Player();
-console.log(player);
+
+// Fungsi untuk aksi pemain dan boss
+function myAttack() {
+    const playerAttack = Math.random() * 1000;
+    const bossAction = bossMove();
+    battle(playerAttack, bossAction);
+    console.log(`Player HP: ${player.hp}, Player MP: ${player.mp}/n Boss HP: ${boss.hp}, Boss MP: ${boss.mp}`);
+}
+
+function myDefence() {
+    const playerDefence = Math.random() * 1000;
+    const bossAction = bossMove();
+    battle(playerDefence, bossAction, true);
+    console.log(`Player HP: ${player.hp}, Player MP: ${player.mp}/n Boss HP: ${boss.hp}, Boss MP: ${boss.mp}`);
+}
+
+function bossMove() {
+    return Math.random() * 1000; // Nilai serangan/bertahan boss
+}
+
+function battle(playerValue, bossValue, isDefending = false) {
+    if (isDefending) {
+        if (playerValue < bossValue) {
+            player.hp -= 100;
+            player.mp -= 100;
+        } else {
+            boss.mp -= 100;
+        }
+    } else {
+        if (playerValue < bossValue) {
+            player.hp -= 100;
+            player.mp -= 100;
+            boss.mp -= 100;
+        } else {
+            boss.hp -= 100;
+            boss.mp -= 100;
+            player.mp -= 100;
+        }
+    }
+}
+
+// Event listeners
+document.getElementById('attack').addEventListener("click", myAttack);
+document.getElementById('defend').addEventListener("click", myDefence);
+// const boss = new BossMonster();
+// console.log(boss);
+// const player = new Player();
+// console.log(player);
 
