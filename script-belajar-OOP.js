@@ -199,8 +199,6 @@ class BossMonster {
 class Player extends BossMonster{
     name = 'player01';
     spesies = 'human';
-    hp = 200;
-    mp = 150;
 };
 const attack = document.getElementById('attack').addEventListener("click",myAttack);
 const defence = document.getElementById('defend').addEventListener("click",myDefence);
@@ -230,11 +228,22 @@ function bossMove(){
         boss.mp - 100;
     }else if(myAttack>bossAttack){
         boss.hp - 100;
+        boss.mp -100;
+        player.mp - 100;
     }else if(myAttack<bossDefend){
         boss.mp - 100
+        player.mp - 100
     }else if(myAttack>bossDefend){
         boss.hp - 100;
         boss.mp - 100;
+        player.mp - 100;
+    }else if(myDefence<bossAttack){
+        boss.mp - 100;
+        player.mp - 100;
+        player.hp - 100;
+    }else if(myDefence>bossAttack){
+        boss.mp - 100;
+        player.mp - 100;
     }
  }
 const boss = new BossMonster();
