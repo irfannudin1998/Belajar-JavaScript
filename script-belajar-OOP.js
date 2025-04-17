@@ -190,66 +190,92 @@
 
 
 // (PUBLIC CLASS FIELD)
-class BossMonster {
-    name = 'dragonKing';
-    spesies = 'dragon';
-    hp = 10000;
-    mp = 10000;
-};
+// class BossMonster {
+//     name = 'dragonKing';
+//     spesies = 'dragon';
+//     hp = 10000;
+//     mp = 10000;
+// };
 
-class Player extends BossMonster {
-    name = 'player01';
-    spesies = 'human';
-};
+// class Player extends BossMonster {
+//     name = 'player01';
+//     spesies = 'human';
+//     constructor(hp,mp){
+//         super(hp,mp);
+//     }
+// };
 
-const boss = new BossMonster();
-const player = new Player();
-
-// Fungsi untuk aksi pemain dan boss
-function myAttack() {
-    const playerAttack = Math.random() * 1000;
-    const bossAction = bossMove();
-    battle(playerAttack, bossAction);
-    console.log(`Player HP: ${player.hp}, Player MP: ${player.mp}/n Boss HP: ${boss.hp}, Boss MP: ${boss.mp}`);
-}
-
-function myDefence() {
-    const playerDefence = Math.random() * 1000;
-    const bossAction = bossMove();
-    battle(playerDefence, bossAction, true);
-    console.log(`Player HP: ${player.hp}, Player MP: ${player.mp}/n Boss HP: ${boss.hp}, Boss MP: ${boss.mp}`);
-}
-
-function bossMove() {
-    return Math.random() * 1000; // Nilai serangan/bertahan boss
-}
-
-function battle(playerValue, bossValue, isDefending = false) {
-    if (isDefending) {
-        if (playerValue < bossValue) {
-            player.hp -= 100;
-            player.mp -= 100;
-        } else {
-            boss.mp -= 100;
-        }
-    } else {
-        if (playerValue < bossValue) {
-            player.hp -= 100;
-            player.mp -= 100;
-            boss.mp -= 100;
-        } else {
-            boss.hp -= 100;
-            boss.mp -= 100;
-            player.mp -= 100;
-        }
-    }
-}
-
-// Event listeners
-document.getElementById('attack').addEventListener("click", myAttack);
-document.getElementById('defend').addEventListener("click", myDefence);
 // const boss = new BossMonster();
-// console.log(boss);
 // const player = new Player();
-// console.log(player);
 
+// // Fungsi untuk aksi pemain dan boss
+// function myAttack() {
+//     const playerAttack = Math.random() * 1000;
+//     const bossAction = bossMove();
+//     battle(playerAttack, bossAction);
+//     console.log(`Player HP: ${player.hp}, Player MP: ${player.mp}/n Boss HP: ${boss.hp}, Boss MP: ${boss.mp}`);
+// }
+
+// function myDefence() {
+//     const playerDefence = Math.random() * 1000;
+//     const bossAction = bossMove();
+//     battle(playerDefence, bossAction, true);
+//     console.log(`Player HP: ${player.hp}, Player MP: ${player.mp}/n Boss HP: ${boss.hp}, Boss MP: ${boss.mp}`);
+// }
+
+// function bossMove() {
+//     return Math.random() * 1000; // Nilai serangan/bertahan boss
+// }
+
+// function battle(playerValue, bossValue, isDefending = false) {
+//     if (isDefending) {
+//         if (playerValue < bossValue) {
+//             player.hp -= 100;
+//             player.mp -= 100;
+//         } else {
+//             boss.mp -= 100;
+//         }
+//     } else {
+//         if (playerValue < bossValue) {
+//             player.hp -= 100;
+//             player.mp -= 100;
+//             boss.mp -= 100;
+//         } else {
+//             boss.hp -= 100;
+//             boss.mp -= 100;
+//             player.mp -= 100;
+//         }
+//     }
+// }
+
+
+// document.getElementById('attack').addEventListener("click", myAttack);
+// document.getElementById('defend').addEventListener("click", myDefence);
+
+// console.log(player.hp)
+
+
+
+// (privat class field)
+class counter {
+    #counter = 0
+    increament(){
+        this.#counter++;
+    }
+    decreament(){
+        this.#counter--;
+    }
+    get(){
+        return this.#counter;
+    }
+};
+ const hitung = new counter();
+
+ hitung.increament();
+ hitung.decreament();
+ hitung.increament();
+ hitung.decreament();
+ hitung.increament();
+ hitung.increament();
+
+ console.log(hitung.get());
