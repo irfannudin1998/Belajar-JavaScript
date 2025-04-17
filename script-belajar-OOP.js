@@ -284,14 +284,62 @@
 
 
 // (static method)
+// class HitunganMatematika{
+//     static hitungSum(...numbers){
+//        let total = 0;
+//         for(const number of numbers){
+//             total += number;
+//         };
+//         return total;
+//     }
+// };
+// // const sum = HitunganMatematika.hitungSum(1,2,3,4,5,6,7,8,9);
+// console.log(HitunganMatematika.hitungSum(9,8,7,6,5,4,3,2,1));
+
+
+
+ 
+
+// (ERROR CLASS)
+// class HitunganMatematika{
+//     static hitungSum(...numbers){
+//         if(numbers.length === 0){
+//             throw new Error("numbers harus bernilai lebih dari 0");
+//         } else if (numbers.length === ""){
+//             throw new Error("mohon diisi numbersnya dengan angka yang lebih dari 0");
+            
+//         }
+//         let total = 0;
+//         for(const number of numbers){
+//             total += number;
+//         };
+//         return total;
+//     }
+// };
+// // const sum = HitunganMatematika.hitungSum(1,2,3,4,5,6,7,8,9);
+// console.log(HitunganMatematika.hitungSum(9,8,7,6,5,4,3,2,1));
+// console.log(HitunganMatematika.hitungSum());
+
+// (error handling)
 class HitunganMatematika{
-    static hitungSum(...numbers){
-        let total = 0;
-        for(const number of numbers){
-            total += number;
-        };
-        return total;
+        static hitungSum(...numbers){
+            if(numbers.length === 0){
+                throw new Error("numbers harus bernilai lebih dari 0");
+            };
+            
+            let total = 0;
+            for(const number of numbers){
+                total += number;
+            };
+            return total;
+        }
+    };
+
+    try{
+        console.log(HitunganMatematika.hitungSum());
+        console.log('irfan')
+    } catch (Error){
+        console.log(`ada masalah : ${Error.message}`);
     }
-};
-// const sum = HitunganMatematika.hitungSum(1,2,3,4,5,6,7,8,9);
-console.log(HitunganMatematika.hitungSum(9,8,7,6,5,4,3,2,1));
+    const sum = HitunganMatematika.hitungSum(1,2,3,4,5,6,7,8,9);
+    console.log(sum);
