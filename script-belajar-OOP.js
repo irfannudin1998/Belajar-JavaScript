@@ -257,25 +257,28 @@
 
 
 // (privat class field)
-class counter {
-    #counter = 0
-    increament(){
-        this.#counter++;
-    }
-    decreament(){
-        this.#counter--;
-    }
-    get(){
-        return this.#counter;
-    }
+// 
+
+
+
+// (STATIC CLASS FIELD)
+// Static class field biasanya digunakan untuk sesuatu yang global, jadi semua bisa menggunakan tanpa peduli tempatnya.
+class Configuration{
+    static name = "irfannudin";
+    static jabatan = "multimedia marketing"
+    static tahunKerja = 4;
 };
- const hitung = new counter();
 
- hitung.increament();
- hitung.decreament();
- hitung.increament();
- hitung.decreament();
- hitung.increament();
- hitung.increament();
+// ini yang salah, karna static class field itu bukan objek dari configuration, tapi konfiguration itu sendiri?
 
- console.log(hitung.get());
+const karyawan = new Configuration();
+console.log(karyawan.name);
+console.log(karyawan.jabatan);
+console.log(karyawan.tahunKerja);
+
+// sedangkan ini yang benar, karna langsung menggukan nama class nya tanpa harus mendefinisikan seperti jika kita ingin mengakses objek dari suatu class.
+
+console.log(Configuration.name);
+console.log(Configuration.jabatan);
+console.log(Configuration.tahunKerja);
+
