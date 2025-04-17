@@ -263,22 +263,35 @@
 
 // (STATIC CLASS FIELD)
 // Static class field biasanya digunakan untuk sesuatu yang global, jadi semua bisa menggunakan tanpa peduli tempatnya.
-class Configuration{
-    static name = "irfannudin";
-    static jabatan = "multimedia marketing"
-    static tahunKerja = 4;
+// class Configuration{
+//     static name = "irfannudin";
+//     static jabatan = "multimedia marketing"
+//     static tahunKerja = 4;
+// };
+
+// // ini yang salah, karna static class field itu bukan objek dari configuration, tapi konfiguration itu sendiri?
+
+// const karyawan = new Configuration();
+// console.log(karyawan.name);
+// console.log(karyawan.jabatan);
+// console.log(karyawan.tahunKerja);
+
+// // sedangkan ini yang benar, karna langsung menggukan nama class nya tanpa harus mendefinisikan seperti jika kita ingin mengakses objek dari suatu class.
+
+// console.log(Configuration.name);
+// console.log(Configuration.jabatan);
+// console.log(Configuration.tahunKerja);
+
+
+// (static method)
+class HitunganMatematika{
+    static hitungSum(...numbers){
+        let total = 0;
+        for(const number of numbers){
+            total += number;
+        };
+        return total;
+    }
 };
-
-// ini yang salah, karna static class field itu bukan objek dari configuration, tapi konfiguration itu sendiri?
-
-const karyawan = new Configuration();
-console.log(karyawan.name);
-console.log(karyawan.jabatan);
-console.log(karyawan.tahunKerja);
-
-// sedangkan ini yang benar, karna langsung menggukan nama class nya tanpa harus mendefinisikan seperti jika kita ingin mengakses objek dari suatu class.
-
-console.log(Configuration.name);
-console.log(Configuration.jabatan);
-console.log(Configuration.tahunKerja);
-
+// const sum = HitunganMatematika.hitungSum(1,2,3,4,5,6,7,8,9);
+console.log(HitunganMatematika.hitungSum(9,8,7,6,5,4,3,2,1));
