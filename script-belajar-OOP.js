@@ -321,25 +321,76 @@
 // console.log(HitunganMatematika.hitungSum());
 
 // (error handling)
-class HitunganMatematika{
-        static hitungSum(...numbers){
-            if(numbers.length === 0){
-                throw new Error("numbers harus bernilai lebih dari 0");
-            };
+// class HitunganMatematika{
+//         static hitungSum(...numbers){
+//             if(numbers.length === 0){
+//                 throw new Error("numbers harus bernilai lebih dari 0");
+//             };
             
-            let total = 0;
-            for(const number of numbers){
-                total += number;
-            };
-            return total;
-        }
-    };
+//             let total = 0;
+//             for(const number of numbers){
+//                 total += number;
+//             };
+//             return total;
+//         }
+//     };
 
-    try{
-        console.log(HitunganMatematika.hitungSum());
-        console.log('irfan')
-    } catch (Error){
-        console.log(`ada masalah : ${Error.message}`);
-    }
-    const sum = HitunganMatematika.hitungSum(1,2,3,4,5,6,7,8,9);
-    console.log(sum);
+//     try{
+//         console.log(HitunganMatematika.hitungSum());
+//         console.log('irfan')
+//     } catch (Error){
+//         console.log(`ada masalah : ${Error.message}`);
+//     }
+//     const sum = HitunganMatematika.hitungSum(1,2,3,4,5,6,7,8,9);
+//     console.log(sum);
+
+
+// (finally setelah try and catch error)
+// finally adalah suatu code untuk try and catch error yang mana akan selalu di eksekusi, entah codenya errormaupun tidak
+    
+    // class HitunganMatematika{
+    //         static hitungSum(...numbers){
+    //             if(numbers.length === 0){
+    //                 throw new Error("numbers harus bernilai lebih dari 0");
+    //             };
+                
+    //             let total = 0;
+    //             for(const number of numbers){
+    //                 total += number;
+    //             };
+    //             return total;
+    //         }
+    //     };
+    
+    //     try{
+    //         console.log(HitunganMatematika.hitungSum());
+    //         console.log('irfan')
+    //     } catch (Error){
+    //         console.log(`ada masalah : ${Error.message}`);
+    //     }finally{
+    //         console.log('program tetap berjalan')
+    //     }
+    //     const sum = HitunganMatematika.hitungSum(1,2,3,4,5,6,7,8,9);
+    //     console.log(sum);
+
+
+    // (class try anad finally)
+    // class Menghitung{
+    //     #berhitung = 0;
+    //     next(){
+    //         try{
+    //             return this.#berhitung
+    //         } finally{
+    //             this.#berhitung+= 2;
+    //         }
+    //     }
+    // }
+    // const berhitung = new Menghitung();
+    // console.log(berhitung.next());
+    // console.log(berhitung.next());
+    // console.log(berhitung.next());
+    // console.log(berhitung.next());
+    // console.log(berhitung.next());
+
+
+
