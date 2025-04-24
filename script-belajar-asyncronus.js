@@ -40,3 +40,46 @@
 // };
 
 // penjumlahan(consoleHasil,5,6);
+
+
+// (promise function)= adalah sebuah function yang akan dijalankan jika terjadi sesuatu/ kegagalan terjadi.
+// function cuciPiring(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             const cuci = true;
+//             if(cuci){
+//                 resolve('saya sudah mencuci piringnya');
+//             }else{
+//                 reject('kamu sedang males nyuci piring, jadi piringnya belum dicuci!')
+//             }
+//         },3000)
+//     })
+// };
+// function nyapuRumah(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             const nyapu = false;
+//             if(nyapu){
+//                 resolve('saya sudah sapu semua bagian rumah');
+//             }else{
+//                 reject('kamu sedang males nyapu rumah, jadi rumahnya masih kotor!')
+//             }
+//         },3500)
+//     })
+// };
+// function ngepelRumah(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             const ngepel = true;
+//             if(ngepel){
+//                 resolve('saya sudah sapu dan sudah ngepel semua bagian rumah');
+//             }else{
+//                 reject('kamu sedang males ngepel, jadi rumahnya bersih karna sudah disapu tapi masih bau!')
+//             }
+//         },3500)
+//     })
+// };
+// cuciPiring().then(value =>{console.log(value); return nyapuRumah()})
+//             .then(value =>{console.log(value); return ngepelRumah()})
+//             .then(value =>{console.log(value); console.log('rumah sudah bersih semua, tak tinggal turu ndisit lur!')})
+//             .catch(Error => console.error(Error));
