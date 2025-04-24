@@ -83,3 +83,58 @@
 //             .then(value =>{console.log(value); return ngepelRumah()})
 //             .then(value =>{console.log(value); console.log('rumah sudah bersih semua, tak tinggal turu ndisit lur!')})
 //             .catch(Error => console.error(Error));
+
+
+// (asyncronous function) = dibagi menjadi dua, yaitu async dan await, async yaitu mengubah function menjadi promise, sedangkan await membuat function menunggu promise.
+
+// function cuciPiring(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(()=>{
+//                 const cuci = true;
+//                 if(cuci){
+//                     resolve('saya sudah mencuci piringnya');
+//                 }else{
+//                     reject('kamu sedang males nyuci piring, jadi piringnya belum dicuci!')
+//                 }
+//             },3000)
+//         })
+//     };
+//     function nyapuRumah(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(()=>{
+//                 const nyapu = true;
+//                 if(nyapu){
+//                     resolve('saya sudah sapu semua bagian rumah');
+//                 }else{
+//                     reject('kamu sedang males nyapu rumah, jadi rumahnya masih kotor!')
+//                 }
+//             },3500)
+//         })
+//     };
+//     function ngepelRumah(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(()=>{
+//                 const ngepel = false;
+//                 if(ngepel){
+//                     resolve('saya sudah sapu dan sudah ngepel semua bagian rumah');
+//                 }else{
+//                     reject('kamu sedang males ngepel, jadi rumahnya bersih karna sudah disapu, tapi masih bau!')
+//                 }
+//             },3500)
+//         })
+//     };
+
+//     async function pekerjaanRumah() {
+//        try{
+//         const hasilNyuci = await cuciPiring();
+//         console.log(hasilNyuci);
+//         const hasilNyapu = await nyapuRumah();
+//         console.log(hasilNyapu);
+//         const hasilngepel = await ngepelRumah();
+//         console.log(hasilngepel);
+//         console.log('rumah sudah bersih semua, tak tinggal turu ndisit lur!')
+//        }catch(error){
+//         console.error(error);
+//        }
+//     };
+//     pekerjaanRumah();
