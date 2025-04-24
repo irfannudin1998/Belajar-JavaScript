@@ -22,7 +22,7 @@
 // const meminta = mintaUang();
 // console.log(meminta);
 
-// fungsi call back = yaitu function yang dijadikan argument di function yang lain.(funsi dari callback functio adalah supaya function yang lambat tetap akan dieksekusi duluan sebelum function yang urutannya memang lebih terakhir.)
+// (fungsi call back)fun = yaitu function yang dijadikan argument di function yang lain.(funsi dari callback functio adalah supaya function yang lambat tetap akan dieksekusi duluan sebelum function yang urutannya memang lebih terakhir.)
 // function haloKabar(callback){
 //      console.log('halo apa kabar!, salam kenal')
 //     callback();
