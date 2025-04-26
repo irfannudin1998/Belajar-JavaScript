@@ -11,5 +11,13 @@
 // console.log(document.contentType);
 
 // document method
-const attackiing = document.getElementById('attack');
-console.log(attackiing);
+// const attackiing = document.getElementById('attack');
+// console.log(attackiing);
+
+
+// (Node)
+const badan = document.getElementById('body');
+console.log(badan);
+const attack = document.getElementById('attack');
+console.log(attack);
+console.log(document.body);
