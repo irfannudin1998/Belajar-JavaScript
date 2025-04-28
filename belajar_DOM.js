@@ -22,9 +22,23 @@
 // console.log(attack);
 // console.log(document.body);
 
-// node property
+/* node property */
+// const list = document.getElementById("list");
+// console.log(list);
+// console.log(list.children);
+// console.log(list.childNodes);
+// console.log(list.textContent);
+
+/*node method*/
+// const list = document.getElementById("list");
+// list.removeChild(document.getElementById("dua"));
+
+/* element */
+// const empat = document.getElementById("empat");
+// empat.textContent = "fourth"
+
+/* element property */
 const list = document.getElementById("list");
-console.log(list);
-console.log(list.children.textContent);
-console.log(list.childNodes);
-console.log(list.textContent);
+console.log(list.tagName);
+console.log(list.id);
+console.log(list.className);
