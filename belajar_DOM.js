@@ -16,8 +16,15 @@
 
 
 // (Node)
-const badan = document.getElementById('body');
-console.log(badan);
-const attack = document.getElementById('attack');
-console.log(attack);
-console.log(document.body);
+// const badan = document.getElementById('body');
+// console.log(badan);
+// const attack = document.getElementById('attack');
+// console.log(attack);
+// console.log(document.body);
+
+// node property
+const list = document.getElementById("list");
+console.log(list);
+console.log(list.children.textContent);
+console.log(list.childNodes);
+console.log(list.textContent);
