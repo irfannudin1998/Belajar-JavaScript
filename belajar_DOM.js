@@ -82,3 +82,13 @@
 // gantiH1.textContent = "ini <b>diganti</b> dengan javascript";
 // gantiH1.innerText = "ini <b>diganti</b> dengan javascript";
 // gantiH1.innerHTML = "ini <b>diganti</b> dengan javascript";
+
+/* melakukan style dengan javascript */
+const links = document.querySelectorAll("a");
+
+for(let link of links){
+link.style.color = "black";
+link.style.textDecoration = "none";
+link.style.fontStyle = "italic";
+};
+
