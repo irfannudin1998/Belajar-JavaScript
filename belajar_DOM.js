@@ -45,15 +45,28 @@
 
 /* cara memilih suatu element berdasarkan id, tag, dan class*/
 
-const tambahClass = document.getElementById("list");
-tambahClass.classList.add("kumpulanClass");
-const kumpulanClass1 = document.getElementsByClassName("kumpulanClass");
-const tambahClass2 = document.getElementById("satu");
-tambahClass2.style.backgroundColor = "tomato";
-document.getElementById("dua").classList.add("list2");
-const listKedua = document.getElementsByClassName("list2")[0];
-console.log(listKedua);
-listKedua.textContent = "ini dibuat dari class yang berasal dari js"
-const listKetiga = document.getElementsByTagName("li")[2];
-console.log(listKetiga);
-listKetiga.style.backgroundColor = "grey"
+// const tambahClass = document.getElementById("list");
+// tambahClass.classList.add("kumpulanClass");
+// const kumpulanClass1 = document.getElementsByClassName("kumpulanClass");
+// const tambahClass2 = document.getElementById("satu");
+// tambahClass2.style.backgroundColor = "tomato";
+// document.getElementById("dua").classList.add("list2");
+// const listKedua = document.getElementsByClassName("list2")[0];
+// console.log(listKedua);
+// listKedua.textContent = "ini dibuat dari class yang berasal dari js"
+// const listKetiga = document.getElementsByTagName("li")[2];
+// console.log(listKetiga);
+// listKetiga.style.backgroundColor = "grey"
+
+
+/* cara memilih element menggunakan querry selector */
+
+// querySelector adalah paket lengkap dari getElementbyId, getElementsByClass, getElementsByTagName.
+// const kumpulanClass = document.querySelector('#list');
+// console.log(kumpulanClass);
+// document.querySelector('#satu').classList.add('listSatu');
+// const listPertama = document.querySelector('.listSatu');
+// listPertama.textContent = "ini hasil pemilihan element menggunakan queryselector class"
+// const listKedua = document.querySelectorAll('li')[1];
+// // queryselector yang biasa hanya akan mengarah pada element pertama saja, jika queryselectorAll kita bisa menentukan yang mana yang mau kita pilih dengan menentukan indexnya.
+// listKedua.style.backgroundColor = 'tomato';
