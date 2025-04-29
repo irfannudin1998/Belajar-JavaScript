@@ -61,7 +61,7 @@
 
 /* cara memilih element menggunakan querry selector */
 
-// querySelector adalah paket lengkap dari getElementbyId, getElementsByClass, getElementsByTagName.
+// querySelector adalah paket lengkap dari getElementbyId, getElementsByClass, getElementsByTagName bahkan bisa memilih suatu type dari suatu tag.
 // const kumpulanClass = document.querySelector('#list');
 // console.log(kumpulanClass);
 // document.querySelector('#satu').classList.add('listSatu');
@@ -70,3 +70,15 @@
 // const listKedua = document.querySelectorAll('li')[1];
 // // queryselector yang biasa hanya akan mengarah pada element pertama saja, jika queryselectorAll kita bisa menentukan yang mana yang mau kita pilih dengan menentukan indexnya.
 // listKedua.style.backgroundColor = 'tomato';
+
+/*memahami innerHtml, Innertext dan TextContent */
+
+// const tubuh = document.querySelector('body');
+// console.log(tubuh.innerText);
+// console.log(tubuh.textContent);
+// console.log(tubuh.innerHTML);
+
+// const gantiH1 = document.querySelector('p');
+// gantiH1.textContent = "ini <b>diganti</b> dengan javascript";
+// gantiH1.innerText = "ini <b>diganti</b> dengan javascript";
+// gantiH1.innerHTML = "ini <b>diganti</b> dengan javascript";
