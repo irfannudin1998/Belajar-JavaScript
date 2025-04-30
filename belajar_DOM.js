@@ -115,3 +115,11 @@
 /* memahami remove dan removeChild */
 // const kumpulanList = document.querySelector("ul");
 // kumpulanList.removeChild(document.querySelectorAll("li")[3])
+
+/* latihan memanggil pokemon dengan DOM */
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
+// let nomorUndian = Math.floor(Math.random()*1000);
+const tempatGambar = document.getElementById("tempatPokemon");
+const pokemon = document.createElement("img");
+pokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png`;
+tempatGambar.appendChild(pokemon);
