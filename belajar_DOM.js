@@ -103,11 +103,15 @@
 // anak2.previousElementSibling.style.fontFamily = "snap ITC"
 
 /* memahami append dan appendchild */
-const hariPendidikan = document.createElement("img");
-hariPendidikan.src = "https://rsurembang.co.id/wp-content/uploads/2024/05/hari-pendidikan-nasional-819x1024.jpg";
-hariPendidikan.alt = "selamat hari pendidikan nasional";
-hariPendidikan.style.width = "100%";
-hariPendidikan.style.padding = "20px 0 20px 0"
-// document.body.appendChild(hariPendidikan); /* appendChild akan menambahkan elemen di akhir semua element, jika ingin menambahkan elemennya di antara element, kita gunakan insertAdjacentElement */
-const ul = document.querySelector('ul');
-ul.insertAdjacentElement("afterbegin",hariPendidikan);
+// const hariPendidikan = document.createElement("img");
+// hariPendidikan.src = "https://rsurembang.co.id/wp-content/uploads/2024/05/hari-pendidikan-nasional-819x1024.jpg";
+// hariPendidikan.alt = "selamat hari pendidikan nasional";
+// hariPendidikan.style.width = "100%";
+// hariPendidikan.style.padding = "20px 0 20px 0"
+// // document.body.appendChild(hariPendidikan); /* appendChild akan menambahkan elemen di akhir semua element, jika ingin menambahkan elemennya di antara element, kita gunakan insertAdjacentElement */
+// const ul = document.querySelector('ul');
+// ul.insertAdjacentElement("afterbegin",hariPendidikan);
+
+/* memahami remove dan removeChild */
+const kumpulanList = document.querySelector("ul");
+kumpulanList.removeChild(document.querySelectorAll("li")[3])
