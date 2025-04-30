@@ -84,11 +84,30 @@
 // gantiH1.innerHTML = "ini <b>diganti</b> dengan javascript";
 
 /* melakukan style dengan javascript */
-const links = document.querySelectorAll("a");
+// const links = document.querySelectorAll("a");
 
-for(let link of links){
-link.style.color = "black";
-link.style.textDecoration = "none";
-link.style.fontStyle = "italic";
-};
+// for(let link of links){
+// link.style.color = "black";
+// link.style.textDecoration = "none";
+// link.style.fontStyle = "italic";
+// };
 
+/* cara menangkap sibling, children, previouselementsibling dll */
+// const link = document.querySelector("a");
+// const parentA = link.parentElement;
+// parentA.style.backgroundColor = "blue";
+// const list = document.querySelector("ul");
+// const anak2 = list.children[2];
+// console.log(anak2);
+// anak2.style.fontSize = "9em";
+// anak2.previousElementSibling.style.fontFamily = "snap ITC"
+
+/* memahami append dan appendchild */
+const hariPendidikan = document.createElement("img");
+hariPendidikan.src = "https://rsurembang.co.id/wp-content/uploads/2024/05/hari-pendidikan-nasional-819x1024.jpg";
+hariPendidikan.alt = "selamat hari pendidikan nasional";
+hariPendidikan.style.width = "100%";
+hariPendidikan.style.padding = "20px 0 20px 0"
+// document.body.appendChild(hariPendidikan); /* appendChild akan menambahkan elemen di akhir semua element, jika ingin menambahkan elemennya di antara element, kita gunakan insertAdjacentElement */
+const ul = document.querySelector('ul');
+ul.insertAdjacentElement("afterbegin",hariPendidikan);
