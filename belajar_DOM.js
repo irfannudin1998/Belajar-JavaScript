@@ -113,5 +113,5 @@
 // ul.insertAdjacentElement("afterbegin",hariPendidikan);
 
 /* memahami remove dan removeChild */
-const kumpulanList = document.querySelector("ul");
-kumpulanList.removeChild(document.querySelectorAll("li")[3])
+// const kumpulanList = document.querySelector("ul");
+// kumpulanList.removeChild(document.querySelectorAll("li")[3])
