@@ -118,7 +118,8 @@
 
 /* latihan memanggil pokemon dengan DOM */
 // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
-// let nomorUndian = Math.floor(Math.random()*1000);
+
+
 const tempatGambar = document.getElementById("tempatPokemon");
 const pokemon = document.createElement("img");
 const tombolPokemon = document.querySelectorAll("button")[2];
@@ -133,3 +134,28 @@ tombolPokemon.addEventListener("click", UndianPokemon);
 
 pokemon.style.placeSelf = "center";
 tempatGambar.appendChild(pokemon);
+
+/* membuat daftar pokemon yang bisa didapatkan dari gachanya */
+const beragamPokemon = document.createElement("h4");
+const body = document.querySelector("body");
+beragamPokemon.innerText = "Ini adalah daftar Pokemon yang akan anda dapatkan !"
+// body.style.display = "grid";
+beragamPokemon.style.placeSelf = "center";
+body.appendChild(beragamPokemon);
+
+const ragamPokemon = document.createElement("img");
+
+
+for(i = 1; i <= 1000; i++){
+ const ragamPokemon = document.createElement("img");
+ const container = document.createElement("div")
+ const label = document.createElement("span");
+ label.innerText = `#${i}`;
+ ragamPokemon.style.display = "flex"
+ ragamPokemon.style.flexDirection = "row"
+// ragamPokemon.style.display = "block";
+ body.appendChild(container);
+ container.appendChild(ragamPokemon);
+ container.appendChild(label);
+ ragamPokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`;
+}
