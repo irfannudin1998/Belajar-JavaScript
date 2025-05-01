@@ -117,9 +117,19 @@
 // kumpulanList.removeChild(document.querySelectorAll("li")[3])
 
 /* latihan memanggil pokemon dengan DOM */
-https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
+// https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
 // let nomorUndian = Math.floor(Math.random()*1000);
 const tempatGambar = document.getElementById("tempatPokemon");
 const pokemon = document.createElement("img");
-pokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png`;
+const tombolPokemon = document.querySelectorAll("button")[2];
+
+function UndianPokemon(){
+    let nomorPokemon = Math.floor(Math.random()*1000);
+    pokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${nomorPokemon}.png`;
+    return nomorPokemon
+};
+tombolPokemon.addEventListener("click", UndianPokemon);
+
+
+pokemon.style.placeSelf = "center";
 tempatGambar.appendChild(pokemon);
