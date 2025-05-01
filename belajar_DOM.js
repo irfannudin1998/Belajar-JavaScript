@@ -136,26 +136,48 @@ pokemon.style.placeSelf = "center";
 tempatGambar.appendChild(pokemon);
 
 /* membuat daftar pokemon yang bisa didapatkan dari gachanya */
-const beragamPokemon = document.createElement("h4");
-const body = document.querySelector("body");
-beragamPokemon.innerText = "Ini adalah daftar Pokemon yang akan anda dapatkan !"
-// body.style.display = "grid";
-beragamPokemon.style.placeSelf = "center";
-body.appendChild(beragamPokemon);
+// const beragamPokemon = document.createElement("h4");
+// const body = document.querySelector("body");
+// beragamPokemon.innerText = "Ini adalah daftar Pokemon yang akan anda dapatkan !"
+// // body.style.display = "grid";
+// beragamPokemon.style.placeSelf = "center";
+// body.appendChild(beragamPokemon);
 
-const ragamPokemon = document.createElement("img");
+// const ragamPokemon = document.createElement("img");
 
 
-for(i = 1; i <= 1000; i++){
- const ragamPokemon = document.createElement("img");
- const container = document.createElement("div")
- const label = document.createElement("span");
- label.innerText = `#${i}`;
- ragamPokemon.style.display = "flex"
- ragamPokemon.style.flexDirection = "row"
-// ragamPokemon.style.display = "block";
- body.appendChild(container);
- container.appendChild(ragamPokemon);
- container.appendChild(label);
- ragamPokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`;
+// for(i = 1; i <= 1000; i++){
+//  const ragamPokemon = document.createElement("img");
+//  const container = document.createElement("div")
+//  const label = document.createElement("span");
+//  label.innerText = `#${i}`;
+//  ragamPokemon.style.display = "flex"
+//  ragamPokemon.style.flexDirection = "row"
+// // ragamPokemon.style.display = "block";
+//  body.appendChild(container);
+//  container.appendChild(ragamPokemon);
+//  container.appendChild(label);
+//  ragamPokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png`;
+// }
+
+/* addEventListener */
+
+const sentuhSaya = document.createElement('h1');
+sentuhSaya.innerText = "SENTUH SAYA";
+sentuhSaya.style.color = "green";
+sentuhSaya.style.backgroundColor = "yellow";
+sentuhSaya.style.fontFamily = "gotham";
+sentuhSaya.style.width = "234px";
+sentuhSaya.style.placeSelf = "center";
+let sentuh = ()=>{sentuhSaya.innerText = "BERANI SEKALI ANDA SENTUH SAYA!!!";
+    sentuhSaya.style.color = "red";
+    sentuhSaya.style.backgroundColor = "black";
 }
+let mendekati = ()=> {sentuhSaya.innerText = "JANGAN SAMPAI KAMU BERANI CLICK SAYA!!!";
+    sentuhSaya.style.color = "yellow";
+    sentuhSaya.style.backgroundColor = "red";
+};
+const body = document.querySelector("body");
+body.appendChild(sentuhSaya);
+sentuhSaya.addEventListener("click", sentuh);
+sentuhSaya.addEventListener("mouseover", mendekati);
