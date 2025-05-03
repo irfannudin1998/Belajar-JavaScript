@@ -120,20 +120,20 @@
 // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png
 
 
-const tempatGambar = document.getElementById("tempatPokemon");
-const pokemon = document.createElement("img");
-const tombolPokemon = document.querySelectorAll("button")[2];
+// const tempatGambar = document.getElementById("tempatPokemon");
+// const pokemon = document.createElement("img");
+// const tombolPokemon = document.querySelectorAll("button")[2];
 
-function UndianPokemon(){
-    let nomorPokemon = Math.floor(Math.random()*1000);
-    pokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${nomorPokemon}.png`;
-    return nomorPokemon
-};
-tombolPokemon.addEventListener("click", UndianPokemon);
+// function UndianPokemon(){
+//     let nomorPokemon = Math.floor(Math.random()*1000);
+//     pokemon.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${nomorPokemon}.png`;
+//     return nomorPokemon
+// };
+// tombolPokemon.addEventListener("click", UndianPokemon);
 
 
-pokemon.style.placeSelf = "center";
-tempatGambar.appendChild(pokemon);
+// pokemon.style.placeSelf = "center";
+// tempatGambar.appendChild(pokemon);
 
 /* membuat daftar pokemon yang bisa didapatkan dari gachanya */
 // const beragamPokemon = document.createElement("h4");
@@ -162,22 +162,46 @@ tempatGambar.appendChild(pokemon);
 
 /* addEventListener */
 
-const sentuhSaya = document.createElement('h1');
-sentuhSaya.innerText = "SENTUH SAYA";
-sentuhSaya.style.color = "green";
-sentuhSaya.style.backgroundColor = "yellow";
-sentuhSaya.style.fontFamily = "gotham";
-sentuhSaya.style.width = "234px";
-sentuhSaya.style.placeSelf = "center";
-let sentuh = ()=>{sentuhSaya.innerText = "BERANI SEKALI ANDA SENTUH SAYA!!!";
-    sentuhSaya.style.color = "red";
-    sentuhSaya.style.backgroundColor = "black";
-}
-let mendekati = ()=> {sentuhSaya.innerText = "JANGAN SAMPAI KAMU BERANI CLICK SAYA!!!";
-    sentuhSaya.style.color = "yellow";
-    sentuhSaya.style.backgroundColor = "red";
+// const sentuhSaya = document.createElement('h1');
+// sentuhSaya.innerText = "SENTUH SAYA";
+// sentuhSaya.style.color = "green";
+// sentuhSaya.style.backgroundColor = "yellow";
+// sentuhSaya.style.fontFamily = "gotham";
+// sentuhSaya.style.width = "234px";
+// sentuhSaya.style.placeSelf = "center";
+// let sentuh = ()=>{sentuhSaya.innerText = "BERANI SEKALI ANDA SENTUH SAYA!!!";
+//     sentuhSaya.style.color = "red";
+//     sentuhSaya.style.backgroundColor = "black";
+// }
+// let mendekati = ()=> {sentuhSaya.innerText = "JANGAN SAMPAI KAMU BERANI CLICK SAYA!!!";
+//     sentuhSaya.style.color = "yellow";
+//     sentuhSaya.style.backgroundColor = "red";
+// };
+// const body = document.querySelector("body");
+// body.appendChild(sentuhSaya);
+// sentuhSaya.addEventListener("click", sentuh);
+// sentuhSaya.addEventListener("mouseover", mendekati);
+
+/* memanfaatkan keyword "this" pada event DOM */
+
+const h3BergantiWarna = document.querySelector(".gantiWarna");
+const buttonGantiWarna = document.querySelectorAll("button")[3];
+buttonGantiWarna.style.height = "100px";
+function rgbAcak(){
+    let r = Math.floor(Math.random()*225);
+    let g = Math.floor(Math.random()*225);
+    let b = Math.floor(Math.random()*225);
+    return `rgb(${r},${g},${b})`;
 };
-const body = document.querySelector("body");
-body.appendChild(sentuhSaya);
-sentuhSaya.addEventListener("click", sentuh);
-sentuhSaya.addEventListener("mouseover", mendekati);
+buttonGantiWarna.addEventListener("click", console.log(rgbAcak()))
+// for (let x of buttonGantiWarna){
+//     x.addEventListener('click',()=>{
+//         x.style.backgroundcolor = rgbAcak;
+//         console.log('hallo')
+//     });
+// };
+
+// const mengubahwarna = ()=>{
+//     this.style.backgroundcolor = rgbAcak;
+//     this.style.color = rgbAcak;
+// };
