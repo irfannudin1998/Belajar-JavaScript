@@ -185,23 +185,25 @@
 /* memanfaatkan keyword "this" pada event DOM */
 
 const h3BergantiWarna = document.querySelector(".gantiWarna");
-const buttonGantiWarna = document.querySelectorAll("button")[3];
-buttonGantiWarna.style.height = "100px";
+
 function rgbAcak(){
     let r = Math.floor(Math.random()*225);
     let g = Math.floor(Math.random()*225);
     let b = Math.floor(Math.random()*225);
     return `rgb(${r},${g},${b})`;
 };
-buttonGantiWarna.addEventListener("click", console.log(rgbAcak()))
-// for (let x of buttonGantiWarna){
-//     x.addEventListener('click',()=>{
-//         x.style.backgroundcolor = rgbAcak;
-//         console.log('hallo')
-//     });
-// };
+
+const button = document.querySelectorAll("button");
+// button.style.height = "100px";
+function mengubahwarna(){
+    this.style.backgroundColor = rgbAcak();
+    this.style.color = "white";
+}
+for (let x of button){
+x.addEventListener("click", mengubahwarna);
+};
 
 // const mengubahwarna = ()=>{
-//     this.style.backgroundcolor = rgbAcak;
-//     this.style.color = rgbAcak;
+//     this.style.backgroundcolor = rgbAcak();
+//     this.style.color = rgbAcak();
 // };
