@@ -184,26 +184,45 @@
 
 /* memanfaatkan keyword "this" pada event DOM */
 
-const h3BergantiWarna = document.querySelector(".gantiWarna");
+// const h3BergantiWarna = document.querySelector(".gantiWarna");
 
-function rgbAcak(){
-    let r = Math.floor(Math.random()*225);
-    let g = Math.floor(Math.random()*225);
-    let b = Math.floor(Math.random()*225);
-    return `rgb(${r},${g},${b})`;
-};
+// function rgbAcak(){
+//     let r = Math.floor(Math.random()*225);
+//     let g = Math.floor(Math.random()*225);
+//     let b = Math.floor(Math.random()*225);
+//     return `rgb(${r},${g},${b})`;
+// };
 
-const button = document.querySelectorAll("button");
-// button.style.height = "100px";
-function mengubahwarna(){
-    this.style.backgroundColor = rgbAcak();
-    this.style.color = "white";
-}
-for (let x of button){
-x.addEventListener("click", mengubahwarna);
-};
+// const button = document.querySelectorAll("button");
+// // button.style.height = "100px";
+// function mengubahwarna(){
+//     this.style.backgroundColor = rgbAcak();
+//     this.style.color = "white";
+// }
+// for (let x of button){
+// x.addEventListener("click", mengubahwarna);
+// };
 
 // const mengubahwarna = ()=>{
 //     this.style.backgroundcolor = rgbAcak();
 //     this.style.color = rgbAcak();
 // };
+
+/* addEventListener() menggunakan keyboard */
+const input = document.createElement("input");
+const tombol = document.querySelectorAll("button")[3];
+tombol.appendChild(input);
+
+function color(){
+    let r = Math.floor(Math.random*255);
+    let g = Math.floor(Math.random*255);
+    let b = Math.floor(Math.random*255);
+return `rgb(${r},${g},${b})`;
+};
+
+input.addEventListener("keydown",(e)=>{
+    if (KeyboardEvent.key === "space"){
+        tombol.style.backgroundColor = color();
+        tombol.style.color = color();
+    };
+})
