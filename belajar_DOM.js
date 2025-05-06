@@ -214,15 +214,16 @@ const tombol = document.querySelectorAll("button")[3];
 tombol.appendChild(input);
 
 function color(){
-    let r = Math.floor(Math.random*255);
-    let g = Math.floor(Math.random*255);
-    let b = Math.floor(Math.random*255);
+    let r = Math.floor(Math.random()*255);
+    let g = Math.floor(Math.random()*255);
+    let b = Math.floor(Math.random()*255);
 return `rgb(${r},${g},${b})`;
 };
 
 input.addEventListener("keydown",(e)=>{
-    if (KeyboardEvent.key === "space"){
+ console.log(e.code)
+    if (e.code === 'Space'){
         tombol.style.backgroundColor = color();
-        tombol.style.color = color();
-    };
+        console.log(color())
+    }
 })
