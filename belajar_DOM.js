@@ -209,21 +209,40 @@
 // };
 
 /* addEventListener() menggunakan keyboard */
-const input = document.createElement("input");
-const tombol = document.querySelectorAll("button")[3];
-tombol.appendChild(input);
+// const input = document.createElement("input");
+// const tombol = document.querySelectorAll("button")[3];
+// tombol.appendChild(input);
 
-function color(){
-    let r = Math.floor(Math.random()*255);
-    let g = Math.floor(Math.random()*255);
-    let b = Math.floor(Math.random()*255);
-return `rgb(${r},${g},${b})`;
-};
+// function color(){
+//     let r = Math.floor(Math.random()*255);
+//     let g = Math.floor(Math.random()*255);
+//     let b = Math.floor(Math.random()*255);
+// return `rgb(${r},${g},${b})`;
+// };
 
-input.addEventListener("keydown",(e)=>{
- console.log(e.code)
-    if (e.code === 'Space'){
-        tombol.style.backgroundColor = color();
-        console.log(color())
-    }
-})
+// input.addEventListener("keydown",(e)=>{
+//  console.log(e.code)
+//     if (e.code === 'Space'){
+//         tombol.style.backgroundColor = color();
+//         console.log(color())
+//     }
+// })
+
+/* event preventdefault */
+// berguna semisal jika kita ingin membuat suatu website yang memasukkan data tanpa harus pergi ke website default dari suatu elemet
+
+// const form = document.createElement("form");
+// form.action = "/destination";
+// form.style.padding = "20px"
+// const input = document.createElement("input");
+// input.type = "text";
+// form.appendChild(input);
+// const button = document.createElement("button");
+// button.innerText = "Submit";
+// form.appendChild(button);
+// document.querySelector("body").appendChild(form);
+
+// form.addEventListener('submit',(e)=>{
+//     e.preventDefault();
+//     console.log(e);
+// })
