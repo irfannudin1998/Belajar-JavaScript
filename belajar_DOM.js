@@ -276,3 +276,25 @@
 //     kumpulanList.append(createList);
 //     input.value = "";
 // })
+
+/* cara mengatasi event bubbling */
+
+// const bersembunyi = document.querySelector("p");
+// const bergantiwarna = document.querySelector("b");
+
+// bersembunyi.addEventListener("click",()=>{
+    
+//     bersembunyi.classList.toggle("hide")
+//     console.log("aku ditekan")
+// });
+// bergantiwarna.addEventListener('click',(e)=>{
+//     bergantiwarna.style.backgroundColor = color();
+// e.stopPropagation();
+// })
+
+// function color(){
+//         let r = Math.floor(Math.random()*255);
+//         let g = Math.floor(Math.random()*255);
+//         let b = Math.floor(Math.random()*255);
+//     return `rgb(${r},${g},${b})`;
+//     };
