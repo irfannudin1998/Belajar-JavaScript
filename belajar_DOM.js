@@ -298,3 +298,42 @@
 //         let b = Math.floor(Math.random()*255);
 //     return `rgb(${r},${g},${b})`;
 //     };
+
+/* mengenal event delegation */
+// event delegation adalah teknik dalam javascript dimana kita menargetkan parent dari suatu element untuk menangani event yang terjadi di anak2nya/ atau bisa diartikan menempatkan suatu event diparent sehingga mempengaruhi anak2nya.
+
+const form = document.createElement("form");
+form.action = "/destination";
+form.style.padding = "20px"
+const label = document.createElement("label")
+label.htmlFor = "nama_pelanggan";
+label.innerText = "Nama Pelanggan : "
+form.appendChild(label)
+const input = document.createElement("input");
+input.type = "text";
+input.name = "nama_pelanggan"
+form.appendChild(input);
+const button = document.createElement("button");
+button.innerText = "Submit";
+form.appendChild(button);
+document.querySelector("body").appendChild(form);
+const kumpulanList = document.createElement("ol");
+kumpulanList.style.listStyleType = "lowerAlpha";
+document.querySelector("body").appendChild(kumpulanList);
+const namaPelanggan = document.createElement("p");
+namaPelanggan.textContent = "Ini nama pelanggan baru";
+kumpulanList.append(namaPelanggan);
+
+form.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const inputValue = input.value;
+    const createList = document.createElement("li");
+    createList.innerText = inputValue;
+    kumpulanList.append(createList);
+    input.value = "";
+})
+kumpulanList.addEventListener("click",(e)=>{
+    if (e.target.nodeName === "LI"){
+        e.target.remove()
+    }
+})
