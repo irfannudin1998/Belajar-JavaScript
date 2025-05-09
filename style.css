@@ -3,4 +3,21 @@
 }
 .papan-angka {
     font-family: orbitron;
+    font-size: 3rem
+}
+#SCORE-P1 {
+    background-color: rgb(28, 28, 28);
+    color: red;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 8rem;
+    margin: 20px
+}
+#SCORE-P2 {
+    background-color: rgb(28, 28, 28);
+    color: red;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 8rem;
+    margin: 20px;
 }
