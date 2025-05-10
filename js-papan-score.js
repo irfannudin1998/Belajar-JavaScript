@@ -9,13 +9,10 @@ let maxScore = 6;
 let gameOver = false;
 
 player01.addEventListener("click",()=>{
-    if(nilaiPlayer01>=maxScore||nilaiPlayer02>=maxScore){
-        if(Math.abs(nilaiPlayer01-nilaiPlayer02)>=2){
-            gameOver = true;
-        } else {
-        maxScore ++;
-        nilaiPlayer01 ++;    
-        }
+      if(!gameOver){
+        nilaiPlayer01 ++;
+    }if(nilaiPlayer01===maxScore){
+        gameOver = true;
     }
 player01.textContent = nilaiPlayer01;
 })
