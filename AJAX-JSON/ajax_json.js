@@ -12,18 +12,26 @@
 //     .catch(Error => console.log(Error));
 /*menggunakan async function*/
 
+const tombolCari = document.querySelector('#cariPokemon');
 
-dataApi();
+tombolCari.addEventListener("click",dataApi)
+
+
 async function dataApi() {
     try{
-        const hasilData = document.querySelector('#namapokemon');
-        const tombolCari = document.querySelector('#cariPokemon');
-        const response = await fetch('http://pokeapi.co/api/v2/pokemon/pikachu')
+        // const gambar = document.querySelector("#gambarPokemon");
+        const hasilData = document.getElementById("namapokemon").value;
+        const response = await fetch(`http://pokeapi.co/api/v2/pokemon/${hasilData}`)
         if(!response.ok){
             throw new Error('data yang kamu cari tidak ada atau typo')
         }
-            const data = (await response).json();
-            console.log(data)
+            const data = await response.json();
+            document.getElementById("gambarPokemon").style.display = "block";
+            document.getElementById("gambarPokemon").style.height = "100px"
+            document.getElementById("gambarPokemon").style.width = "100px"
+            document.getElementById("gambarPokemon").src = data.sprites.front_default
+            
+           
         
     }
     catch(Error){
