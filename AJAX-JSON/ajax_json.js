@@ -53,3 +53,26 @@ tombolCari.addEventListener("click",()=>{
 });})
 
 
+/*melakukan request mengunakan library axios dan menggunakan headers*/
+
+
+const br = document.createElement("br");
+const ol = document.createElement("ol");
+const tombol = document.createElement("button");
+const H3 = document.querySelector("h3");
+H3.appendChild(br);
+H3.appendChild(tombol);
+H3.appendChild(ol);
+tombol.textContent = "Tombol Jokes"; 
+tombol.style.marginTop = "20px";
+
+const getJoke = async()=>{
+    const config = {
+        Headers: {
+            accept: "application/json",
+        },
+    };
+    const res = await axios.get("https://icanhazdadjoke.com/", config);
+    console.log(res.data);
+}
+
