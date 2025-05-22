@@ -54,7 +54,11 @@ tombolCari.addEventListener("click",()=>{
 
 
 /*melakukan request mengunakan library axios dan menggunakan headers*/
-
+// http header : accept
+// accept adalah http header yang digunakan untuk memberitahu fotmat data apa yang kita inginkan.
+// jika server memiliki atau mendukung format data yang diminta maka server akan memberikan, jika server tidak mendukung atau tidak memiliki maka server akan menolak permintaan
+// tidak direkomendasikan menggunakan url yang memiliki buntut belakang, contohnya /api/product.json (.json ini tidak direkomendasikan)
+// lebih baik nanti diminta / disematkan di header.(contoh : application/json)
 
 const br = document.createElement("br");
 const ol = document.createElement("ol");
