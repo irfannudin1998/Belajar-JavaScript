@@ -82,13 +82,13 @@
 
 const tombol = document.querySelector("button")
 tombol.addEventListener("click", async ()=>{
+    document.querySelectorAll("img").forEach((img) => img.remove())
     const data = document.querySelector("#namapokemon").value
     const keyword = data;
     const config = {
         params: {q:keyword}
     }
     const res = await axios.get(`https://api.tvmaze.com/search/shows`, config);
-    console.log(res)
     posterfilm(res.data);
 })
 const posterfilm = (show)=>{
