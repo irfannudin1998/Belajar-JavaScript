@@ -79,7 +79,7 @@
 //     const res = await axios.get("https://icanhazdadjoke.com/", config);
 //     console.log(res.data);
 // }
-tombol.appendChild(orderlist)
+
 const tombol = document.querySelector("button")
 tombol.addEventListener("click", async ()=>{
     const data = document.querySelector("#namapokemon").value
@@ -89,12 +89,14 @@ tombol.addEventListener("click", async ()=>{
     }
     const res = await axios.get(`https://api.tvmaze.com/search/shows`, config);
     console.log(res)
-    for(let x of res){
-        
-        const poster = document.createElement('img');
-        const container = document.createElement('div');
-        poster.style.display = "flex"
-        poster.style.flexDirection = "row"
-        poster.style.display = "block";
+    posterfilm(res.data);
 })
-
+const posterfilm = (show)=>{
+        for(let x of show){
+        if(x.show.image){
+            const gambar = document.createElement('img');
+            gambar.src = x.show.image.medium;
+            document.body.appendChild(gambar);
+        }
+        }
+}
