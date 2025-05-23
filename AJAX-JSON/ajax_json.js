@@ -40,17 +40,17 @@
 // }
 
 /* melakukan request dengan library axios */
-const tombolCari = document.querySelector('#cariPokemon');
-tombolCari.addEventListener("click",()=>{
-    const hasilData = document.getElementById("namapokemon").value;
-    axios.get(`http://pokeapi.co/api/v2/pokemon/${hasilData}`).then((res)=>{
-    console.log(res)
-    document.getElementById('gambarPokemon').src = res.data.sprites.front_default
-    document.getElementById('gambarPokemon').style.display = "block"
+// const tombolCari = document.querySelector('#cariPokemon');
+// tombolCari.addEventListener("click",()=>{
+//     const hasilData = document.getElementById("namapokemon").value;
+//     axios.get(`http://pokeapi.co/api/v2/pokemon/${hasilData}`).then((res)=>{
+//     console.log(res)
+//     document.getElementById('gambarPokemon').src = res.data.sprites.front_default
+//     document.getElementById('gambarPokemon').style.display = "block"
 
-}).catch((error)=>{
-    console.error(error)
-});})
+// }).catch((error)=>{
+//     console.error(error)
+// });})
 
 
 /*melakukan request mengunakan library axios dan menggunakan headers*/
@@ -60,23 +60,41 @@ tombolCari.addEventListener("click",()=>{
 // tidak direkomendasikan menggunakan url yang memiliki buntut belakang, contohnya /api/product.json (.json ini tidak direkomendasikan)
 // lebih baik nanti diminta / disematkan di header.(contoh : application/json)
 
-const br = document.createElement("br");
-const ol = document.createElement("ol");
-const tombol = document.createElement("button");
-const H3 = document.querySelector("h3");
-H3.appendChild(br);
-H3.appendChild(tombol);
-H3.appendChild(ol);
-tombol.textContent = "Tombol Jokes"; 
-tombol.style.marginTop = "20px";
+// const br = document.createElement("br");
+// const ol = document.createElement("ol");
+// const tombol = document.createElement("button");
+// const H3 = document.querySelector("h3");
+// H3.appendChild(br);
+// H3.appendChild(tombol);
+// H3.appendChild(ol);
+// tombol.textContent = "Tombol Jokes"; 
+// tombol.style.marginTop = "20px";
 
-const getJoke = async()=>{
+// const getJoke = async()=>{
+//     const config = {
+//         Headers: {
+//             accept: "application/json",
+//         },
+//     };
+//     const res = await axios.get("https://icanhazdadjoke.com/", config);
+//     console.log(res.data);
+// }
+tombol.appendChild(orderlist)
+const tombol = document.querySelector("button")
+tombol.addEventListener("click", async ()=>{
+    const data = document.querySelector("#namapokemon").value
+    const keyword = data;
     const config = {
-        Headers: {
-            accept: "application/json",
-        },
-    };
-    const res = await axios.get("https://icanhazdadjoke.com/", config);
-    console.log(res.data);
-}
+        params: {q:keyword}
+    }
+    const res = await axios.get(`https://api.tvmaze.com/search/shows`, config);
+    console.log(res)
+    for(let x of res){
+        
+        const poster = document.createElement('img');
+        const container = document.createElement('div');
+        poster.style.display = "flex"
+        poster.style.flexDirection = "row"
+        poster.style.display = "block";
+})
 
